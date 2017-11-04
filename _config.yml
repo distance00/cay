@@ -1,6 +1,6 @@
 title: Cayman Blog
 description: Cayman Blog Theme is a clean, responsive blogging theme.
-show_downloads: false
+show_downloads: true
 
 baseurl: "" # change this to the subpath of your site, e.g. /blog. Leave it empty if you don't need it.
 url: "https://distance00.github.io" # change this to the base hostname & protocol for your site
