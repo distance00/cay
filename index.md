@@ -7,5 +7,3 @@
 #
 layout: home
 ---
-
-Have a look at the Github page for more information
