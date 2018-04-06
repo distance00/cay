@@ -1,4 +1,4 @@
-﻿var FindProxyForURL = function(init, profiles) {
+var FindProxyForURL = function(init, profiles) {
     return function(url, host) {
         "use strict";
         var result = init, scheme = url.substr(0, url.indexOf(":"));
@@ -8,10 +8,29 @@
         } while (typeof result !== "string" || result.charCodeAt(0) === 43);
         return result;
     };
-}("+333", {
-    "+333": function() {
+}("+444", {
+    "+444": function() {
         ;
-function FindProxyForURL(url,host){var D='DIRECT';var p='HTTPS jp02.doublec1ick.com:443';host=host.toLowerCase(); var du = ['chrome-extension://','chrome://'];for(var a in du){if(url.indexOf(du[a]) == 0){return D;}} var dh = ['10.[0-9]+.[0-9]+.[0-9]+', '172.[0-9]+.[0-9]+.[0-9]+', '192.168.[0-9]+.[0-9]+'];for(var b in dh){if(shExpMatch(host,dh[b])){return D;}} var dn = ['0.0.0.0', '127.0.0.1', 'localhost'];for(var c in dn){if(dnsDomainIs(host,dn[c])){return D;}} var npd={"info":{"fastsecuritytunnel":{"admin":1,"api":1},"fastersecuritytunnel":{"api":1}},"com":{"fastsecuritytunnel":1,"ccb":1,"bankcomm":1,"abchina":1,"cmbchina":1,"psbc":1,"cebbank":1,"pingan":1,"ecitic":1,"alipay":1,"tenpay":1,"paymentwall":{"api":1}},"cn":{"com":{"icbc":1,"cmbc":1,"spdb":1,"cib":1,"hxb":1,"cgbchina":1},"boc":1},"co":{"fstunnel":1},"club":{"fstunnel":{"admin":1}}};var npdParts = host.split('.');for(var d=npdParts.length-1;d>=0;d--){var part=npdParts[d];npd=npd[part];if(npd == undefined||npd==1){break;}} if(npd==1){return D;} var node={"tv":{"twitch":{"www":1}},"com":{"bbc":1,"google":1,"twitter":1,"facebook":1,"youtube":1,"ggpht":1,"comgoogle":{"twimg":1},"googlevideo":1,"youtube-nocookie":1,"ytimg":1,"googletagservices":1,"googlecode":1,"blogspot":1,"instagram":1,"dropbox":1,"googleapis":1,"googlesyndication":1,"blogger":1,"googleusercontent":1,"gstatic":1,"flickr":1,"appspot":1,"vimeo":1,"feedburner":1,"tumblr":1,"twimg":1,"cdninstagram":1,"chrome":1,"gmail":1,"t66y":1,"pinterest":1,"dmm":1,"pinimg":1,"accountkit":1,"tellapart":1},"hk":{"com":{"google":1,"comgoogle":{"twimg":1}}},"jp":{"co":{"google":1,"dmm":1},"pinterest":1},"net":{"fbcdn":1,"doubleclick":1,"facebook":1,"sexinsex":1},"org":{"thepiratebay":1,"archive":1,"telegram":1,"chromium":1},"uk":{"co":1},"co":{"t":1},"tw":{"com":{"google":1}},"be":{"youtu":1},"cc":{"sex8":1},"gl":{"goo":1}};var hostParts = host.split('.');for(var d=hostParts.length-1;d>=0;d--){var part=hostParts[d];node=node[part];if(node == undefined||node==1){break;}} if(node==1){return p;}return D;}
+var FindProxyForURL = function(url, host){
+    if(host == 'localhost'
+        || host == '127.0.0.1'
+        || shExpMatch(host, '192.168.*')
+        || shExpMatch(host, '10.168.*')
+        || shExpMatch(host, '*.ghelper-server.com')
+        || shExpMatch(host, '*.21t.xyz')
+        || shExpMatch(host, '*.stunnel.co')
+        || shExpMatch(host, '*.tcpbbr.net')
+        || shExpMatch(host, '*.chromehelper.net')
+        || shExpMatch(host, 'stunnel.co')
+        || shExpMatch(host, 'tcpbbr.net')
+        || shExpMatch(host, '51netflix.com')
+        || host == 'chromehelper.net') {return 'DIRECT';}
+                        
+                             
+if( shExpMatch(host, '*.ghelper-server.com') || shExpMatch(host, '*.*.ghelper-server.com')){return 'DIRECT';}if( shExpMatch(host, 'google.com') || shExpMatch(host, '*.google.com')){return 'HTTPS hkt.21t.xyz:3674;HTTPS pccw2.tcpbbr.net:443;HTTPS us.ghelper-server.com:1233';}if( shExpMatch(host, 'google.com.hk') || shExpMatch(host, '*.google.com.hk')){return 'HTTPS pccw2.tcpbbr.net:443;HTTPS hk2.stunnel.co:443;HTTPS 51netflix.com:80';}if( shExpMatch(host, 'google.*') || shExpMatch(host, '*.google.*')){return 'HTTPS hkt.21t.xyz:3674;HTTPS jp.ghelper-server.com:443;HTTPS fremont.stunnel.co:443';}if( shExpMatch(host, 'gstatic.com') || shExpMatch(host, '*.gstatic.com')){return 'HTTPS hkt.21t.xyz:3674;HTTPS jp.ghelper-server.com:443;HTTPS fremont.stunnel.co:443';}if( shExpMatch(host, 'googleusercontent.com') || shExpMatch(host, '*.googleusercontent.com')){return 'HTTPS hkt.21t.xyz:3674;HTTPS pccw2.tcpbbr.net:443;HTTPS us.ghelper-server.com:1233';}if( shExpMatch(host, 'gmail.com') || shExpMatch(host, '*.gmail.com')){return 'HTTPS hkt.21t.xyz:3674;HTTPS jp.ghelper-server.com:443;HTTPS fremont.stunnel.co:443';}if( shExpMatch(host, 'googleusercontent.com	') || shExpMatch(host, '*.googleusercontent.com	')){return 'HTTPS hkt.21t.xyz:3674;HTTPS jp.ghelper-server.com:443;HTTPS fremont.stunnel.co:443';}if( shExpMatch(host, 'chrome.com') || shExpMatch(host, '*.chrome.com')){return 'HTTPS hkt.21t.xyz:3674;HTTPS jp.ghelper-server.com:443;HTTPS fremont.stunnel.co:443';}if( shExpMatch(host, 'chromium.org') || shExpMatch(host, '*.chromium.org')){return 'HTTPS hkt.21t.xyz:3674;HTTPS jp.ghelper-server.com:443;HTTPS fremont.stunnel.co:443';}if( shExpMatch(host, 'wikipedia.org') || shExpMatch(host, '*.wikipedia.org')){return 'HTTPS hkt.21t.xyz:3674;HTTPS jp.ghelper-server.com:443;HTTPS fremont.stunnel.co:443';}if( shExpMatch(host, 'stackoverflow.com') || shExpMatch(host, '*.stackoverflow.com')){return 'HTTPS hkt.21t.xyz:3674;HTTPS pccw2.tcpbbr.net:443;HTTPS us.ghelper-server.com:1233';}if( shExpMatch(host, 'android.com') || shExpMatch(host, '*.android.com')){return 'HTTPS hkt.21t.xyz:3674;HTTPS pccw2.tcpbbr.net:443;HTTPS us.ghelper-server.com:1233';}if( shExpMatch(host, 'fbcdn.net') || shExpMatch(host, '*.fbcdn.net')){return 'HTTPS hkt.21t.xyz:3674;HTTPS jp.ghelper-server.com:443;HTTPS fremont.stunnel.co:443';}if( shExpMatch(host, 'ggpht.com') || shExpMatch(host, '*.ggpht.com')){return 'HTTPS hkt.21t.xyz:3674;HTTPS jp.ghelper-server.com:443;HTTPS fremont.stunnel.co:443';}if( shExpMatch(host, 'appspot.com') || shExpMatch(host, '*.appspot.com')){return 'HTTPS hkt.21t.xyz:3674;HTTPS jp.ghelper-server.com:443;HTTPS fremont.stunnel.co:443';}if( shExpMatch(host, 'html5rocks.com') || shExpMatch(host, '*.html5rocks.com')){return 'HTTPS hkt.21t.xyz:3674;HTTPS jp.ghelper-server.com:443;HTTPS fremont.stunnel.co:443';}if( shExpMatch(host, 'instagram.com') || shExpMatch(host, '*.instagram.com')){return 'HTTPS hkt.21t.xyz:3674;HTTPS jp.ghelper-server.com:443;HTTPS fremont.stunnel.co:443';}if( shExpMatch(host, 'cdninstagram.com') || shExpMatch(host, '*.cdninstagram.com')){return 'HTTPS hkt.21t.xyz:3674;HTTPS jp.ghelper-server.com:443;HTTPS fremont.stunnel.co:443';}if( shExpMatch(host, 'domains.google') || shExpMatch(host, '*.domains.google')){return 'HTTPS hkt.21t.xyz:3674;HTTPS jp.ghelper-server.com:443;HTTPS fremont.stunnel.co:443';}if( shExpMatch(host, 'googleapis.com') || shExpMatch(host, '*.googleapis.com')){return 'HTTPS hkt.21t.xyz:3674;HTTPS jp.ghelper-server.com:443;HTTPS fremont.stunnel.co:443';}
+                return 'DIRECT';
+}
+
 
 /* End of PAC */;
         return FindProxyForURL;
