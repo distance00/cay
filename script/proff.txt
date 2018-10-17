@@ -1,1 +1,2 @@
 https://jnodej.herokuapp.com/
+https://raw.githubusercontent.com/distance00/distance00.github.io/master/script/Profile0.pac
