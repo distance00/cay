@@ -1,0 +1,55 @@
+{
+  "log": {
+    "loglevel": "warning"
+  },
+   "inbound": {
+    "port": 8686,
+    "protocol": "http",
+    "listen": "127.0.0.1",
+	"settings": {
+    }
+  },
+  "inboundDetour": [],
+  "outbound": {
+    "protocol": "vmess",
+    "settings": {
+      "vnext": [
+        {
+          "address": "wss-we2o.7e14.starter-us-west-2.openshiftapps.com", 
+          "port": 443, 
+          "users": [
+            {
+              "id": "e911bbbc-de1a-4541-97ba-fbee995a346d",
+              "alterId": 64,
+              "security": "none"
+            }
+          ]
+        }
+      ]
+    },
+	"streamSettings": {
+      "network": "ws",
+	  "security": "tls",
+	  "tlsSettings": {
+        "allowInsecure": true
+	  }
+    },
+	"mux": {
+        "enabled": true,
+        "concurrency": 8
+    }
+  },
+  "outboundDetour": [
+    {
+      "protocol": "freedom",
+      "settings": {},
+      "tag": "direct"
+    }
+  ],
+  "dns": {
+    "servers": [
+      "localhost"
+    ]
+  }
+
+}
