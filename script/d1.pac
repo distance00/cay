@@ -17,7 +17,7 @@ function FindProxyForURL(url, host) {
                   if(whiteList && whiteList.length > 0 && whiteList.indexOf(host.replace(/^www./,'')) == -1)
                       return 'system';
 
-                  return 'socks5 23.237.128.51:11084';
+                  return 'HTTPS www.maikeer.online:80';
                 } catch(ex) {
                   return 'system';
                 }
